@@ -10,27 +10,27 @@
             setcookie($majoredat_nom,$majoredat_value,time() + (30 * 24 * 60 * 60));
             setcookie($idioma_nom,$idioma_value,time() + (30 * 24 * 60 * 60));
             setcookie($moneda_nom,$moneda_values,time() + (30 * 24 * 60 * 60));
-            if ($_COOKIE['majoredat']="true"){
-                if ($_COOKIE['idioma']="catala"&&$_COOKIE['moneda']="€"){
+            if ($_COOKIE['majoredat']=="true"){
+                if ($_COOKIE['idioma']=="catala"&&$_COOKIE['moneda']=="€"){
                     echo "Vi blanc: 39" . $_COOKIE['moneda']."<br>";
                     echo "Whisky: 14" . $_COOKIE['moneda']."<br>";
                     echo "T’oferim el vi “Les Terrasses” a un preu de 39". $_COOKIE['moneda'];
-                }elseif ($_COOKIE['idioma']="catala"){
+                }elseif ($_COOKIE['idioma']=="catala"){
                     echo "Vi blanc: 39" . $_COOKIE['moneda']."<br>";
                     echo "Whisky: 14" . $_COOKIE['moneda'];
-                }elseif ($_COOKIE['idioma']="espanyol"){
+                }elseif ($_COOKIE['idioma']=="espanyol"){
                     echo "Vino blanco: 39" . $_COOKIE['moneda']."<br>";
                     echo "Whisky: 14" . $_COOKIE['moneda'];
-                }elseif ($_COOKIE['idioma']="angles"){
+                }elseif ($_COOKIE['idioma']=="angles"){
                     echo "White vine: 39" . $_COOKIE['moneda']."<br>";
                     echo "Whisky: 14" . $_COOKIE['moneda'];
                 }
             }else{
-                if ($_COOKIE['idioma']="catala"){
+                if ($_COOKIE['idioma']=="catala"){
                     echo "<p>No et podem vendre alcohol si ets menor d’edat.</p>";
-                }elseif ($_COOKIE['idioma']="espanyol"){
+                }elseif ($_COOKIE['idioma']=="espanyol"){
                     echo "<p>No te podemos vender alcohol si eres menor de edad.</p>";
-                }elseif ($_COOKIE['idioma']="angles"){
+                }elseif ($_COOKIE['idioma']=="angles"){
                     echo "<p>We cannot sell you alcohol if you are underage.</p>";
                 }
             }
