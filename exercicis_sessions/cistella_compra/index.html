@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <h1>Botiga Online</h1>
+        <form action="cistella_compra.php" method="post">
+            <label for="producte">Producte 1: Llibre</label><br>
+            <label for="preu">Preu: 10 euros</label><br>            
+            <input type="hidden" name="producte" value="Llibre">
+            <input type="hidden" name="preu" value="10">
+            <label for="quantitat">Quantitat:</label>
+            <input type="number" name="quantitat" min="1" value="1">
+            <button type="submit">Afegir a la cistella</button>
+        </form>
+
+        <form action="cistella_compra.php" method="post">
+             <label for="producte">Producte 2: Boligrafs</label><br>
+            <label for="preu">Preu: 2 euros</label><br>
+            <input type="hidden" name="producte" value="Bolígrafs">
+            <input type="hidden" name="preu" value="2">
+            <label for="quantitat">Quantitat:</label>
+            <input type="number" name="quantitat" min="1" value="1">
+            <button type="submit">Afegir a la cistella</button>
+        </form>
+
+        <a href="finalitzar.php">Finalitzar compra</a>
+    </body>
+</html>
