@@ -51,7 +51,17 @@ if ($filter_type) {
     $params[] = $filter_type;
 }
 
-$sql .= " ORDER BY c.captured_at DESC";
+$sort = $_GET['sort'] ?? 'newest';
+
+switch ($sort) {
+    case 'oldest':
+        $sql .= " ORDER BY c.id ASC";
+        break;
+    case 'newest':
+    default:
+        $sql .= " ORDER BY c.id DESC";
+        break;
+}
 
 $stmt = $pdo->prepare($sql);
 $stmt->execute($params);
@@ -120,6 +130,12 @@ $captures = $stmt->fetchAll();
                                 <?php echo ucfirst($t); ?>
                             </option>
                         <?php endforeach; ?>
+                    </select>
+                    
+                    <label for="sort" style="margin-left: 10px;">Ordenar:</label>
+                    <select name="sort" id="sort" style="padding: 5px;">
+                        <option value="newest" <?php echo $sort === 'newest' ? 'selected' : ''; ?>>Més recent a més antic</option>
+                        <option value="oldest" <?php echo $sort === 'oldest' ? 'selected' : ''; ?>>Més antic a més recent</option>
                     </select>
                     <button type="submit" class="btn" style="padding: 5px 15px; font-size: 0.9em;">Filtrar</button>
                     <?php if ($filter_type): ?>
